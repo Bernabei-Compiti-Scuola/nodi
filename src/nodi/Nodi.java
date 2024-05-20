@@ -35,16 +35,18 @@ public class Nodi {
         System.out.println("\nVuota? " + lista.isEmpty());
         
         // Iterazione sulla lista e stampa dei valori dei nodi
+        System.out.println("\nvalori lista:\n");
         Nodo<Integer> punt = lista.getTesta();
         for(int i = 0; i < lista.size(); i++)
         {
             System.out.println("\n" + punt.getValore());
             punt = punt.getNext();
         }
-
+        System.out.println("\nrimuoviamo il nodo 2");
         // Rimozione di un nodo dalla lista
         System.out.println(lista.remove(2));
-        
+
+        System.out.println("\nvalori lista:\n");
         // Iterazione sulla lista dopo la rimozione
         punt = lista.getTesta();
         for(int i = 0; i < lista.size(); i++)
@@ -53,10 +55,25 @@ public class Nodi {
             punt = punt.getNext();
         }
         
+        System.out.println("\ninseriamo un nuovo nodo all'inizio della lista");
         // Creazione di un nuovo nodo e inserimento in testa alla lista
         Nodo<Integer> n6 = new Nodo<Integer>(22); 
         lista.push(n6);
+
+        System.out.println("\nvalori lista:\n");
+        // Iterazione sulla lista dopo l'inserimento
+        punt = lista.getTesta();
+        for(int i = 0; i < lista.size(); i++)
+        {
+            System.out.println("\n" + punt.getValore());
+            punt = punt.getNext();
+        }
+
+        System.out.println("\ninseriamo un nuovo nodo persona in posizione 2");
+        //inserimanto nodo di tipo persona
+        lista.addPersona(2,"fabio");
         
+        System.out.println("\nvalori lista:\n");
         // Iterazione sulla lista dopo l'inserimento
         punt = lista.getTesta();
         for(int i = 0; i < lista.size(); i++)

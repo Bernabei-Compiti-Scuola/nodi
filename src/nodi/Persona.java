@@ -16,20 +16,17 @@ import java.util.ArrayList;
 public class Persona 
 {
     private String nome;
-    private String cognome;
-    private String cf;
 
     /**
      * Costruisce un oggetto Persona con il nome, cognome e codice fiscale specificati.
      * 
      * @param nome Il nome della persona.
-     * @param cognome Il cognome della persona.
-     * @param cf Il codice fiscale della persona.
      */
-    public Persona(String nome, String cognome, String cf) {
+    public Persona(String nome) {
         this.nome = nome;
-        this.cognome = cognome;
-        this.cf = cf;
+    }
+    
+    public Persona(){
     }
 
     /**
@@ -37,26 +34,14 @@ public class Persona
      * 
      * @return Il nome della persona.
      */
-    public String getNome() {
+    public String getNome() 
+    {
         return nome;
     }
 
-    /**
-     * Restituisce il cognome della persona.
-     * 
-     * @return Il cognome della persona.
-     */
-    public String getCognome() {
-        return cognome;
-    }
-
-    /**
-     * Restituisce il codice fiscale della persona.
-     * 
-     * @return Il codice fiscale della persona.
-     */
-    public String getCf() {
-        return cf;
+    public void setNome(String nome)
+    {
+        this.nome=nome;
     }
     
     /**
@@ -67,7 +52,7 @@ public class Persona
     @Override
     public String toString()
     {
-        String s="\nNome: "+this.getNome()+" Cognome: "+this.getCognome()+" CF: "+this.getCf();
+        String s="\nNome: "+this.getNome();
         return s;
     }
 }

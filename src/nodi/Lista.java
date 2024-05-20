@@ -28,7 +28,6 @@ public class Lista <T> implements Cloneable
     {
         testa=n;
     }
-
     /**
      * Restituisce il nodo di testa della lista.
      * @return il nodo di testa
@@ -220,5 +219,35 @@ public class Lista <T> implements Cloneable
             attuale.getNext().setValore(v);
             return true;
         }
+    }
+
+    /**
+     * Aggiunge una persona nella lista alla posizione specificata.
+     * 
+     * @param posizione la posizione in cui inserire la persona
+     * @param nome il nome della persona da inserire
+     * @return true se la persona è stata inserita correttamente, false altrimenti
+     */
+    public boolean addPersona(int posizione, String nome)
+    {
+        if(testa==null)
+            return false;
+        else if(posizione>this.size() || posizione<0)
+            return false;
+        else
+        {
+            Nodo attuale=testa;
+            int cont=0;
+            while(cont<posizione-1)
+            {
+                attuale=attuale.getNext();
+                cont++;
+            }
+            Persona a=new Persona(nome);
+            Nodo<Persona> persona=new Nodo<Persona>(a);
+            persona.setNext(attuale.getNext());
+            attuale.setNext(persona);
+            return true;
+        }   
     }
 }
